@@ -71,8 +71,6 @@ $ systemctl status transmission-add-trackers.service # 查看状态
   #!/bin/sh
   #将 transmission-remote 的路径添加到 PATH 变量中
   export PATH=$PATH:/volume2/@appstore/transmission/bin
-  #脚本的其余部分...
-  Fetching trackers: https://cf.trackerslist.com/all.txt
   #脚本的其余部分继续...
   ```
 
