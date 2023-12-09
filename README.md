@@ -55,6 +55,10 @@ $ systemctl status transmission-add-trackers.service # 查看状态
 - ```sh
   which transmission-remote
   ```
+- 如不知道安装路径可以使用命令：
+- ```sh
+  sudo find / -name transmission-remote
+  ```
 - 然后在脚本中将所有`transmission-remote`替换为完整路径。例如 /usr/bin/transmission-remote
 - 检查环境变量： 确保脚本在运行时能够访问 transmission-remote 命令所在的目录。
 - 您可以在脚本的开头添加一行，将 PATH 设置为包含 transmission-remote所在的目录，例如：
@@ -62,10 +66,17 @@ $ systemctl status transmission-add-trackers.service # 查看状态
   export PATH=$PATH:/path/to/transmission/bin
   ```
 - PS:请用实际的路径替换 /path/to/transmission/bin
-- 如不知道安装路径可以使用命令：
-  ```sh
-  sudo find / -name transmission-remote
-  ```
+- 例如：
+- ```sh
+- #!/bin/sh
+
+# 将 transmission-remote 的路径添加到 PATH 变量中
+export PATH=$PATH:/volume2/@appstore/transmission/bin
+
+# 脚本的其余部分...
+Fetching trackers: https://cf.trackerslist.com/all.txt
+# 脚本的其余部分继续...
+```
 
 ## 感谢
 
